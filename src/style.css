@@ -38,15 +38,13 @@ button {
 #game-shell {
   width: min(96vw, 1280px);
   height: min(56.25vw, 720px, calc(100vh - 24px));
-  border-radius: 18px;
   overflow: hidden;
-  border: 2px solid rgba(153, 114, 196, 0.7);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-  background: #120d18;
+  background: transparent;
 }
 
 #game-shell.playing {
-  box-shadow: 0 30px 80px rgba(235, 113, 46, 0.18);
+  border-radius: 12px;
+  box-shadow: 0 18px 70px rgba(0, 0, 0, 0.42);
 }
 
 #game-shell canvas {
@@ -83,6 +81,162 @@ button {
 
 .title-panel {
   text-align: center;
+}
+
+.title-screen {
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(7, 9, 17, 0.08), rgba(7, 9, 17, 0.28) 54%, rgba(7, 9, 17, 0.72));
+  backdrop-filter: none;
+}
+
+.title-screen::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 49%, transparent 0, rgba(8, 9, 16, 0.08) 36%, rgba(8, 9, 16, 0.48) 100%),
+    linear-gradient(0deg, rgba(8, 9, 15, 0.7), transparent 40%, rgba(8, 9, 15, 0.13));
+  content: '';
+  pointer-events: none;
+}
+
+.title-art {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.title-art svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.86;
+}
+
+.title-screen .title-panel {
+  position: relative;
+  width: min(780px, 90vw);
+  padding: clamp(1.2rem, 3.2vh, 2.4rem) 1.5rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.title-sigil {
+  width: clamp(42px, 7vh, 66px);
+  height: clamp(42px, 7vh, 66px);
+  margin: 0 auto 0.65rem;
+  color: #e8c78d;
+  filter: drop-shadow(0 0 14px rgba(226, 179, 112, 0.24));
+}
+
+.title-sigil svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+.title-sigil svg path:last-child {
+  fill: currentColor;
+  stroke: none;
+}
+
+.title-screen .eyebrow {
+  margin-bottom: 0.35rem;
+  color: #d3b88a;
+  font-size: 0.64rem;
+  letter-spacing: 0.23em;
+}
+
+.title-screen h1 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(3.2rem, 9vw, 6.4rem);
+  font-weight: 500;
+  letter-spacing: 0.19em;
+  line-height: 1;
+  text-shadow: 0 4px 28px rgba(4, 5, 10, 0.8), 0 0 42px rgba(236, 190, 122, 0.22);
+}
+
+.title-screen h2 {
+  margin: 0.5rem 0 0.25rem;
+  color: #e5d6bd;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1rem, 2.4vw, 1.55rem);
+  font-weight: 400;
+  letter-spacing: 0.48em;
+  text-transform: uppercase;
+}
+
+.title-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  width: min(230px, 52vw);
+  margin: 0.75rem auto;
+  color: #e8c78d;
+}
+
+.title-divider span {
+  width: 72px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(232, 199, 141, 0.72));
+}
+
+.title-divider span:last-child {
+  transform: rotate(180deg);
+}
+
+.title-divider i {
+  font-size: 0.78rem;
+  font-style: normal;
+}
+
+.title-screen .game-title-tagline {
+  margin: 0 auto 1rem;
+  color: #d3c4ad;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.9rem;
+  font-style: italic;
+  letter-spacing: 0.06em;
+  text-transform: none;
+}
+
+.title-screen .story-mini {
+  max-width: 540px;
+  margin-bottom: 1.7rem;
+  color: #e0d4c2;
+  font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+  line-height: 1.8;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+.title-screen button.primary {
+  border: 1px solid rgba(229, 198, 144, 0.68);
+  background: linear-gradient(180deg, rgba(52, 39, 43, 0.9), rgba(25, 22, 30, 0.94));
+  color: #f1d8a4;
+  box-shadow: inset 0 1px rgba(255, 242, 207, 0.08), 0 6px 24px rgba(0, 0, 0, 0.24);
+}
+
+.title-screen button.primary:hover {
+  border-color: #f2d89e;
+  background: linear-gradient(180deg, rgba(79, 52, 49, 0.96), rgba(34, 26, 34, 0.98));
+  box-shadow: inset 0 1px rgba(255, 242, 207, 0.14), 0 0 24px rgba(233, 190, 120, 0.16);
+}
+
+.title-screen button.secondary {
+  border-color: rgba(215, 193, 157, 0.35);
+  background: rgba(18, 19, 27, 0.58);
+  color: #ded0b7;
 }
 
 .eyebrow {
