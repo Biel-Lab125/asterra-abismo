@@ -150,13 +150,6 @@ button {
   stroke: none;
 }
 
-.title-screen .eyebrow {
-  margin-bottom: 0.35rem;
-  color: #d3b88a;
-  font-size: 0.64rem;
-  letter-spacing: 0.23em;
-}
-
 .title-screen h1 {
   font-family: Georgia, 'Times New Roman', serif;
   font-size: clamp(3.2rem, 9vw, 6.4rem);
@@ -174,50 +167,6 @@ button {
   font-weight: 400;
   letter-spacing: 0.48em;
   text-transform: uppercase;
-}
-
-.title-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
-  width: min(230px, 52vw);
-  margin: 0.75rem auto;
-  color: #e8c78d;
-}
-
-.title-divider span {
-  width: 72px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(232, 199, 141, 0.72));
-}
-
-.title-divider span:last-child {
-  transform: rotate(180deg);
-}
-
-.title-divider i {
-  font-size: 0.78rem;
-  font-style: normal;
-}
-
-.title-screen .game-title-tagline {
-  margin: 0 auto 1rem;
-  color: #d3c4ad;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 0.9rem;
-  font-style: italic;
-  letter-spacing: 0.06em;
-  text-transform: none;
-}
-
-.title-screen .story-mini {
-  max-width: 540px;
-  margin-bottom: 1.7rem;
-  color: #e0d4c2;
-  font-size: clamp(0.9rem, 1.6vw, 1.05rem);
-  line-height: 1.8;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
 }
 
 .title-screen button.primary {

@@ -70,15 +70,8 @@ app.innerHTML = `
             <path d="m32 8 2.2 5.2 5.6.4-4.3 3.6 1.4 5.4-4.9-2.9-4.9 2.9 1.4-5.4-4.3-3.6 5.6-.4z" />
           </svg>
         </div>
-        <p class="eyebrow">Uma lenda • Cem descidas • Dez guardiões</p>
         <h1>Asterra</h1>
         <h2>Abismo</h2>
-        <div class="title-divider" aria-hidden="true"><span></span><i>✦</i><span></span></div>
-        <p class="game-title-tagline">Uma aventura roguelike de fantasia sombria</p>
-        <div class="story-mini">
-          Sob as ruínas, cem andares guardam uma antiga maldição.<br />
-          Desça. Enfrente os guardiões. Encontre o caminho de volta à luz.
-        </div>
         <div class="actions">
           <button id="new-game-btn" class="primary">Novo jogo</button>
           <button id="continue-btn" class="secondary">Continuar</button>
